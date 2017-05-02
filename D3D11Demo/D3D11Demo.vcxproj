@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{48FD1107-BD06-4782-9FC7-5A624049FD25}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>D3D11Demo</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="SourceCode\GameLoop\GameLoopManager\GameLoopManager.cpp" />
+    <ClCompile Include="SourceCode\GameLoop\GameScene\Demo0\Demo0.cpp" />
+    <ClCompile Include="SourceCode\GameLoop\GameScene\Demo1\Demo1.cpp" />
+    <ClCompile Include="SourceCode\GameLoop\GameScene\Demo2\Demo2.cpp" />
+    <ClCompile Include="SourceCode\GameLoop\GameScene\Demo3\Demo3.cpp" />
+    <ClCompile Include="SourceCode\GameLoop\GameScene\GameScene.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ConstantBufferPackage\CBPLight\Point\CBPPointLight.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ConstantBufferPackage\CBPLight\Spot\CBPSpotLight.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ConstantBufferPackage\CBPPipelineMatrix\CBPPipelineMatrix.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ConstantBuffer\ConstantBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11Device\D3D11Device.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\D3D11RenderData.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\RenderState\BlendState\BlendState.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\RenderState\DepthStencilState\DepthStencilState.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\RenderState\RasterizerState\RasterizerState.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\RenderState\SamplerState\SamplerState.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\BaseShader\BaseShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\DomainShader\DomainShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\GeometryShader\GeometryShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\HullShader\HullShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\PixelShader\PixelShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\Shader\VertexShader\VertexShader.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderData\ViewPort\ViewPort.cpp" />
+    <ClCompile Include="SourceCode\Graphics\D3D11RenderManager\D3D11RenderManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ModelData\IndexBuffer\IndexBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ModelData\ModelData.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ModelData\VertexBuffer\VertexBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\PipelineMatrix\ProjectionMatrix\ProjectionMatrix.cpp" />
+    <ClCompile Include="SourceCode\Graphics\PipelineMatrix\ViewMatrix\ViewMatrix.cpp" />
+    <ClCompile Include="SourceCode\Graphics\PipelineMatrix\WorldMatrix\WorldMatrix.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPDeferredLambert\RPDeferredLambert.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPDepthBuffer\RPDepthBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPGaussFilter\RPGaussFilter.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPGBufferTessellation\RPGBufferTessellation.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPGBuffer\RPGBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPLambertModel\RPLambertModel.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPRect\RPRect.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderPackage\RPShadowVolume\RPShadowVolume.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\ShaderTexture\InputTexture\InputTexture.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\ShaderTexture\OutputTexture\OutputTexture.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\TextureMaterial\BackBuffer\BackBuffer.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\TextureMaterial\DepthStencilTexture\DepthStencilTexture.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\TextureMaterial\ImageTexture\ImageTexture.cpp" />
+    <ClCompile Include="SourceCode\Graphics\Texture\TextureMaterial\RenderTargetTexture\RenderTargetTexture.cpp" />
+    <ClCompile Include="SourceCode\input\input.cpp" />
+    <ClCompile Include="SourceCode\main.cpp" />
+    <ClCompile Include="SourceCode\Timer\Timer.cpp" />
+    <ClCompile Include="SourceCode\Window\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SourceCode\GameLoop\GameLoopManager\GameLoopManager.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\Demo0\Demo0.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\Demo1\Demo1.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\Demo2\Demo2.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\Demo3\Demo3.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\GameScene.h" />
+    <ClInclude Include="SourceCode\GameLoop\GameScene\GameSceneList.h" />
+    <ClInclude Include="SourceCode\Graphics\ConstantBufferPackage\CBPLight\Point\CBPPointLight.h" />
+    <ClInclude Include="SourceCode\Graphics\ConstantBufferPackage\CBPLight\Spot\CBPSpotLight.h" />
+    <ClInclude Include="SourceCode\Graphics\ConstantBufferPackage\CBPPipelineMatrix\CBPPipelineMatrix.h" />
+    <ClInclude Include="SourceCode\Graphics\ConstantBuffer\ConstantBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11Device\D3D11Device.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\D3D11RenderData.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\RenderState\BlendState\BlendState.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\RenderState\DepthStencilState\DepthStencilState.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\RenderState\RasterizerState\RasterizerState.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\RenderState\SamplerState\SamplerState.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\BaseShader\BaseShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\DomainShader\DomainShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\GeometryShader\GeometryShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\HullShader\HullShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\PixelShader\PixelShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\Shader\VertexShader\VertexShader.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderData\ViewPort\ViewPort.h" />
+    <ClInclude Include="SourceCode\Graphics\D3D11RenderManager\D3D11RenderManager.h" />
+    <ClInclude Include="SourceCode\Graphics\ModelData\IndexBuffer\IndexBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\ModelData\ModelData.h" />
+    <ClInclude Include="SourceCode\Graphics\ModelData\VertexBuffer\VertexBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\PipelineMatrix\ProjectionMatrix\ProjectionMatrix.h" />
+    <ClInclude Include="SourceCode\Graphics\PipelineMatrix\ViewMatrix\ViewMatrix.h" />
+    <ClInclude Include="SourceCode\Graphics\PipelineMatrix\WorldMatrix\WorldMatrix.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPDeferredLambert\RPDeferredLambert.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPDepthBuffer\RPDepthBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPGaussFilter\RPGaussFilter.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPGBufferTessellation\RPGBufferTessellation.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPGBuffer\RPGBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPLambertModel\RPLambertModel.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPRect\RPRect.h" />
+    <ClInclude Include="SourceCode\Graphics\RenderPackage\RPShadowVolume\RPShadowVolume.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\ShaderTexture\InputTexture\InputTexture.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\ShaderTexture\OutputTexture\OutputTexture.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\TextureMaterial\BackBuffer\BackBuffer.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\TextureMaterial\DepthStencilTexture\DepthStencilTexture.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\TextureMaterial\ImageTexture\ImageTexture.h" />
+    <ClInclude Include="SourceCode\Graphics\Texture\TextureMaterial\RenderTargetTexture\RenderTargetTexture.h" />
+    <ClInclude Include="SourceCode\input\input.h" />
+    <ClInclude Include="SourceCode\Timer\Timer.h" />
+    <ClInclude Include="SourceCode\Window\Window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
