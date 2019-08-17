@@ -12,7 +12,7 @@
 #include"../../../ConstantBuffer/ConstantBuffer.h"
 #include"../../../PipelineMatrix/ViewMatrix/ViewMatrix.h"
 
-#define MAX_POINT_LIGHT_COUNT (50)
+#define MAX_POINT_LIGHT_COUNT (10)
 
 namespace	OGL
 {

@@ -30,7 +30,7 @@ void	OGL::Demo1::Init(void)
 	
 	m_world.SetTransPos(0, 0, 0);
 	//---リソースロード
-	m_modelData.LoadOgmData("model/puronama/puronama.ogm");
+	m_modelData.LoadOgmData("model/akane/akane.ogm");
 	m_stageData.LoadOgmData("model/stage/stage.ogm");
 	//---テクスチャ生成
 	m_backBuffer.Create();
@@ -51,12 +51,12 @@ void	OGL::Demo1::Init(void)
 	m_outBackBuffer.SetTexture(&m_backBuffer, 0);
 	m_shadowOutTex.SetTexture(&m_shadowDepthTex);
 	//---ライトのセッティング
-	const float posRange = 70.0;
+	const float posRange = 100.0;
 	std::random_device rd;
 	std::mt19937 mt(rd());
-	std::uniform_real_distribution<float> colL(0.0, 1.0);
+	std::uniform_real_distribution<float> colL(0.0, 0.3);
 	std::uniform_real_distribution<float> posXZL(-posRange, posRange);
-	std::uniform_real_distribution<float> posYL(0, posRange);
+	std::uniform_real_distribution<float> posYL(-10, posRange-10);
 	std::uniform_real_distribution<float> decMinL(0.1, 20.0);
 	std::uniform_real_distribution<float> decMaxL(20.0, 50.0);
 	std::uniform_real_distribution<float> spotRange(0, 1);
@@ -65,8 +65,8 @@ void	OGL::Demo1::Init(void)
 	m_pointLight.SetSlotCount(MAX_POINT_LIGHT_COUNT);
 	for (int i = 0; i < MAX_POINT_LIGHT_COUNT; i++)
 	{
-//		m_pointLight.SetPos(i, D3DXVECTOR3(posXZL(mt), posYL(mt), posXZL(mt)));
-		m_pointLight.SetPos(i, D3DXVECTOR3(((i % 10) * 20) - 100, 5, ((i / 10) * 20) - 30));
+		m_pointLight.SetPos(i, D3DXVECTOR3(posXZL(mt), posYL(mt), posXZL(mt)));
+//		m_pointLight.SetPos(i, D3DXVECTOR3(((i % 10) * 20) - 100, 5, ((i / 10) * 20) - 30));
 		m_pointLight.SetDecrement(i, decMinL(mt), decMaxL(mt));
 		m_pointLight.SetDiffuseCollar(i, D3DXVECTOR4(colL(mt), colL(mt), colL(mt), colL(mt)));
 	}
@@ -74,8 +74,8 @@ void	OGL::Demo1::Init(void)
 	m_spotLight.SetSlotCount(MAX_SPOT_LIGHT_COUNT);		//MAX_SPOT_LIGHT_COUNT
 	for (int i = 0; i < MAX_SPOT_LIGHT_COUNT; i++)
 	{
-		m_spotLight.GetTransform(i)->SetTransPos(((i % 10) * 20) - 100, 5, ((i / 10) * 20) - 40);
-	//	m_spotLight.GetTransform(i)->SetTransPos(10,10, 20);
+		m_spotLight.GetTransform(i)->SetTransPos(posXZL(mt), posYL(mt), posXZL(mt));
+//		m_spotLight.GetTransform(i)->SetTransPos(((i % 10) * 20) - 100, 5, ((i / 10) * 20) - 40);
 		m_spotLight.GetTransform(i)->SetRotationDegree(spotRot(mt), spotRot(mt), spotRot(mt));
 	//	m_spotLight.GetTransform(i)->SetRotationDegree(-90, 0, 0);
 		m_spotLight.SetRange(i, spotRange(mt));

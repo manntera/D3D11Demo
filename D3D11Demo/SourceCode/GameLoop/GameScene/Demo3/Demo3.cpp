@@ -47,7 +47,7 @@ void	OGL::Demo3::Init(void)
 	m_outGBuffer.SetTexture(&m_depthStencilTex);
 	m_outBackBuffer.SetTexture(&m_backBuffer, 0);
 	//---ライトのセッティング
-	const float posRange = 70.0;
+	const float posRange = 40.0;
 	std::random_device rd;
 	std::mt19937 mt(rd());
 	std::uniform_real_distribution<float> colL(0.0, 1.0);
